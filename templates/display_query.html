@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename='display.css' ) }}">
+
+    <body>
+        <ul>
+            {% for item in nav.top %}
+            <a class="{{ 'active' if item.is_active else '' }}" href="{{ item.url }}">{{ item.label }}</a> {% endfor %}
+        </ul>
+        <table class='results'>
+            {%for heading in column_names%}
+            <th class='headings'>{{heading}}</th>
+            {%endfor%} {%for row in data%}
+            <tr>
+                <td> {{row[0]}}</td>
+                <td> {{row[1]}} </td>
+                <td> {{row[2]}} </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </body>
+</head>
+
+</html>
