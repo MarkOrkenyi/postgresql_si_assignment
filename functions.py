@@ -10,9 +10,9 @@ def request_data(query):
         print("I am unable to connect to the database")
     cursor = conn.cursor()
     cursor.execute(query)
-    result = cursor.fetchall()
+    results = cursor.fetchall()
     conn.close()
-    return result
+    return results
 
 
 '''options = ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7"]
